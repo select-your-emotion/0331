@@ -26,12 +26,12 @@ const SearchForm = (props) => {
       <Form onSubmit={handleSearch}>
         {errorMsg && <p className="errorMsg">{errorMsg}</p>}
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Enter search term</Form.Label>
+          <Form.Label className="label">플레이리스트에 추가할 곡을 찾아보세요</Form.Label>
           <Form.Control
             type="search"
             name="searchTerm"
             value={searchTerm}
-            placeholder="Search for album, artist or playlist"
+            placeholder="Search for album, artist , tracks or playlist"
             onChange={handleInputChange}
             autoComplete="off"
           />

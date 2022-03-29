@@ -15,6 +15,7 @@ const SearchResult = (props) => {
     setCategory,
     selectedCategory
   } = props;
+  console.log(result);
   const { albums, artists, playlist, tracks } = result;
   if (!isValidSession()) {
     return (
@@ -62,16 +63,16 @@ const SearchResult = (props) => {
             PlayLists
           </button>
         )}
-        {/* {!_.isEmpty(tracks.items) && (
+        {!_.isEmpty(tracks.items) && (
           <button
             className={`${
               selectedCategory === 'tracks' ? 'btn active' : 'btn'
             }`}
             onClick={() => setCategory('tracks')}
           >
-            tracks
+            Tracks
           </button>
-        )} */}
+        )}
       </div>
       <div className={`${selectedCategory === 'albums' ? '' : 'hide'}`}>
         {albums && <AlbumsList albums={albums} />}

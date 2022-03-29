@@ -1,11 +1,11 @@
-import { SET_TRACK, ADD_TRACK } from '../utils/constants';
+import { SET_TRACKS, ADD_TRACKS } from '../utils/constants';
 
-const trackReducer = (state = {}, action) => {
+const tracksReducer = (state = {}, action) => {
   const { tracks } = action;
   switch (action.type) {
-    case SET_TRACK:
+    case SET_TRACKS:
       return tracks;
-    case ADD_TRACK:
+    case ADD_TRACKS:
       return {
         ...state,
         next: tracks.next,
@@ -16,4 +16,4 @@ const trackReducer = (state = {}, action) => {
   }
 };
 
-export default trackReducer;
+export default tracksReducer;

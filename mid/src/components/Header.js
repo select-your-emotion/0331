@@ -1,8 +1,12 @@
-import React from 'react';
-import classes from './Header.module.css'
+import React from 'react'
+// import './Header.module.css'
 
-const Header = () => {
-  return <h1 className={classes.header}>음악 검색하기</h1>;
-};
+function Header() {
+  return (
+    <header className='container'>
+      <h1 className="header-top">SYEmotion</h1>
+    </header>
+  )
+}
 
 export default Header;

@@ -5,8 +5,8 @@ import {
   ADD_ARTISTS,
   SET_PLAYLIST,
   ADD_PLAYLIST,
-  SET_TRACK,
-  ADD_TRACK
+  SET_TRACKS,
+  ADD_TRACKS
 } from '../utils/constants';
 import { get } from '../utils/api';
 
@@ -40,12 +40,12 @@ export const addPlaylist = (playlists) => ({
   playlists
 });
 export const setTracks = (tracks) => ({
-  type: SET_TRACK,
+  type: SET_TRACKS,
   tracks
 });
 
 export const addTracks = (tracks) => ({
-  type: ADD_TRACK,
+  type: ADD_TRACKS,
   tracks
 });
 
@@ -60,8 +60,8 @@ export const initiateGetResult = (searchTerm) => {
       const { albums, artists, playlists, tracks } = result;
       dispatch(setAlbums(albums));
       dispatch(setArtists(artists));
-      dispatch(setTracks(tracks));
-      return dispatch(setPlayList(playlists));
+      dispatch(setPlayList(playlists));
+      return dispatch(setTracks(tracks)); 
     } catch (error) {
       console.log('error', error);
     }
