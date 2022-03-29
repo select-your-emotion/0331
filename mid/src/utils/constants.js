@@ -5,7 +5,7 @@ export const ADD_ARTISTS = 'ADD_ARTISTS';
 export const SET_PLAYLIST = 'SET_PLAYLIST';
 export const ADD_PLAYLIST = 'ADD_PLAYLIST';
 export const SET_USER = 'SET_USER';
-export const SET_TRACK = 'SET_TRACK';
-export const ADD_TRACK = 'ADD_TRACK';
+export const SET_TRACKS = 'SET_TRACKS';
+export const ADD_TRACKS = 'ADD_TRACKS';
 
 

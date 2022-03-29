@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #f3f4f6;
+  background: black;
   font-family: 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 20px;
@@ -132,7 +132,8 @@ body {
 
 .albums,
 .artists,
-.playlist {
+.playlist,
+.tracks {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -166,4 +167,137 @@ body {
   .main-heading {
     text-align: center;
   }
+}
+
+
+
+/* 우리 css */
+.container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+}
+
+.header-top {
+  box-sizing: border-box;
+  border-color: black;
+  display: flex;
+  margin-left : 6rem;
+  color: white
+}
+
+.header-side {
+  display: flex;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  float: right;
+}
+
+.header-side h2 {
+  margin-left: 3rem;
+  padding-top : 0.4rem;
+}
+
+.Sidebar {
+  position: fixed;
+  /* top: 5.5rem; */
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  background-color: #26262c;
+  color: grey;
+
+  margin-right: 10px;
+  padding-right: 0%;
+}
+
+
+.sidebar-logo {
+  font-size: 25px;
+}
+
+.sidebar-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
+}
+.sidebar-text1 {
+  color: white;
+}
+.sidebar-items .item {
+  display: flex;
+  align-items: center;
+  padding: 16px 8px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.sidebar-items .item:hover {
+  color:white
+}
+
+.Sidebar.collapsed {
+  width: 52px;
+}
+
+.Sidebar.collapsed .sidebar-icon {
+  margin-right: 0;
+}
+
+.Sidebar.collapsed .sidebar-text,
+.Sidebar.collapsed .sidebar-logo,
+.Sidebar.collapsed .sidebar-text1 {
+  display: none;
+}
+
+/* .sidebar {
+  height:100vh;
+  flex:0.2;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 230px;
+  height: 100vh;
+  background-color: #040404;
+} */
+.sidebar:hover {
+  color: white;
+}
+
+.sidebar_logo {
+  margin-right: auto;
+  height: 70px;
+  padding: 10px;
+}
+
+.sidebar__title {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.label {
+  color: white;
+  font-weight: bold;
 }
