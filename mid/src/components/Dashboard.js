@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, Router} from 'react-router-dom';
 import {
   initiateGetResult,
   initiateLoadMoreAlbums, initiateLoadMoreArtists, initiateLoadMorePlaylist, initiateLoadMoreTracks
@@ -10,6 +10,11 @@ import Loader from './Loader';
 import SearchForm from './SearchForm';
 import SearchResult from './SearchResult';
 import Sidebar from './Sidebar';
+import Search from './search';
+import Library from './Library';
+import createMyPlaylist from './createMyPlaylist';
+import Player from './player';
+
 
 const Dashboard = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -76,7 +81,17 @@ const Dashboard = (props) => {
         <div>
      <Header />
           <div className="wrap">
-            <Sidebar />
+          <Router>
+          <div className="main-body">
+          <Sidebar />
+          <Switch>
+            <Route path="/" component={<Library/>} />
+            <Route path="/search" component={<Search/>} />
+            <Route path="/player" component={<Player/>} />
+            <Route path="/createmyplaylist" component={<createMyPlaylist/>} />
+          </Switch>
+        </div>
+        </Router>
           </div>
           <div className="wrap2">
           <SearchForm handleSearch={handleSearch} />
