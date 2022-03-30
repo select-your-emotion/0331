@@ -1,72 +1,32 @@
-import React, {useState} from 'react'
-import {RiMenuLine, RiLayoutGridFill, RiChat4Fill, RiTeamFill, RiTaskFill, RiPieChart2Fill} from 'react-icons/ri'
-// import './Sidebar.module.css'
+import React, { useEffect, useState } from 'react'
+import SidebarButton from './sidebarButton'
+import { MdFavorite } from "react-icons/md";
+import { FaGripfire, FaPlay } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
+import { IoLibrary } from "react-icons/io5";
+import { MdSpaceDashboard } from "react-icons/md";
+// import apiClient from '../../spotify';
 
+export default function Sidebar() {
+  const [image, setImage] = useState("https://cdn.pixabay.com/photo/2017/06/05/07/58/butterfly-2373175_960_720.png");
 
-function Sidebar() {
-
-  const sidebarCollpased = localStorage.getItem('sidebar-collapsed');
-  const [isExpanded, setIsExpanded] = useState(sidebarCollpased ? false : true);
-
-  const handleToggler = () => {
-    if (isExpanded) {
-      setIsExpanded(false);
-      localStorage.setItem('sidebar-collapsed', true);
-      return;
-    }
-    setIsExpanded(true);
-    localStorage.removeItem('sidebar-collapsed');
-  };
-
-  // const handler = () => {
-  //   if(isExpanded) {
-  //     setIsExpanded(false);
-  //     document.getElementsByClassName("sidebar-icon").style.width = "250px";
-  //     document.getElementsById("main").style.width = "250px";
-  //     return;
-  //   }
-  //   setIsExpanded(true);
-  //   document.getElementsByClassName("sidebar-icon").style.width = "0px";
-  //   document.getElementsById("main").style.width = "0px";
-  // };
+  // useEffect(() => {
+  //   apiClient.get("me").then((response) => {
+  //     setImage(response.data.images[0].url);
+  //   });
+  // }, [])
 
   return (
-    <div className={isExpanded ? "Sidebar" : "Sidebar collapsed"}>
-      
-      <div className="sidebar-header" id="main">
-        <RiMenuLine className="sidebar-icon" onClick={handleToggler} />
-        <h1 className="sidebar-logo">SYE</h1>
-      </div>
-      <div className="sidebar-items">
-        <div className="item">
-          <RiChat4Fill className="sidebar-icon" />
-          <span className="sidebar-text">리스트 생성</span>
+    <div className="sidebar-container">
+        <img src={image} className="profile-img" alt="profile" />
+        <div>
+        <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
+        <SidebarButton title="Trending" to="/trending" icon={<FaGripfire />} />
+        <SidebarButton title="Player" to="/player" icon={<FaPlay />} />
+        <SidebarButton title="Favorites" to="/favorites" icon={<MdFavorite />} />
+        <SidebarButton title="Library" to="/Library" icon={<IoLibrary />} />
         </div>
-        <div className="item">
-          <RiTeamFill className="sidebar-icon" />
-          <span className="sidebar-text">즐겨찾기</span>
-        </div>
-        <div className="item">
-          <RiTaskFill className="sidebar-icon" />
-          <span className="sidebar-text">좋아요</span>
-        </div>
-        <div className="item">
-          <RiPieChart2Fill className="sidebar-icon" />
-          <span className="sidebar-text">추천</span>
-        </div>
-          <br />
-          <div className="item">
-          <span className="sidebar-text1">PLAYLISTS</span>
-      </div>
-          <hr />
-        <div className="item">
-          <RiLayoutGridFill className="sidebar-icon" />
-          <span className="sidebar-text">Playlists</span>
-          {/* 이 밑으로 플레이리스트 출력 */}
-        </div>
-        </div>
-   </div>
+        <SidebarButton title="Sign Out" to="" icon={<FaSignOutAlt />} />
+    </div>
   )
 }
-
-export default Sidebar

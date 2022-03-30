@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import {
-  initiateGetResult,
-  initiateLoadMoreAlbums,
-  initiateLoadMorePlaylist,
-  initiateLoadMoreArtists,
-  initiateLoadMoreTracks
-} from '../actions/result';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import SearchResult from './SearchResult';
-import SearchForm from './SearchForm';
+import {
+  initiateGetResult,
+  initiateLoadMoreAlbums, initiateLoadMoreArtists, initiateLoadMorePlaylist, initiateLoadMoreTracks
+} from '../actions/result';
 import Header from './Header';
 import Loader from './Loader';
+import SearchForm from './SearchForm';
+import SearchResult from './SearchResult';
 import Sidebar from './Sidebar';
 
 const Dashboard = (props) => {
@@ -77,8 +74,11 @@ const Dashboard = (props) => {
     <React.Fragment>
       {isValidSession() ? (
         <div>
-          <Header />
-          <Sidebar />
+     <Header />
+          <div className="wrap">
+            <Sidebar />
+          </div>
+          <div className="wrap2">
           <SearchForm handleSearch={handleSearch} />
           <Loader show={isLoading}>Loading...</Loader>
           <SearchResult
@@ -89,6 +89,7 @@ const Dashboard = (props) => {
             isValidSession={isValidSession}
             />
         </div>
+      </div>
       ) : (
         <Redirect
           to={{
