@@ -52,7 +52,7 @@ const SongList = (props) => {
       <img className={classes.songimage} src={props.songInfoAlbumUrl} alt="" />
       <div className={classes.songName}>{props.songInfoName}</div>
       <div className={classes.songSinger}>{props.songInfoSinger}</div>
-      <button className="delete__button" onClick ={submitHandler}>Delete</button>
+      <button className="playlist__delete__button" onClick ={submitHandler}>x</button>
     </div>
     </>
 

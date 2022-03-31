@@ -18,6 +18,10 @@
   width : 300px;
   height : 300px;
   min-width : 20px;
-
+  margin-bottom: 20px;
   
+}
+
+.songName{
+  margin-bottom: 5px;
 }

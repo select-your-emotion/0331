@@ -36,6 +36,8 @@ const TracksList = ({ tracks }) => {
                   <div className="song_artist">
                   {item.artists.map((artist) => artist.name)}
                   </div>
+                  
+
                 </div>
               </React.Fragment>
             );

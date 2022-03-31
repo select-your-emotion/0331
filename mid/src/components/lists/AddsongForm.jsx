@@ -10,7 +10,7 @@ const AddsongForm = (props) => {
   
   return (
 
-    <button type="submit" onClick={submitHandler}>Add</button>
+    <button className="add__button" type="submit" onClick={submitHandler}>Add</button>
   )
 }
 

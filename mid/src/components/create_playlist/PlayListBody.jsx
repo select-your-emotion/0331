@@ -26,15 +26,10 @@ const PlayListBody = (props) => {
             })
         });
 
-      // console.log(response.ok);
       const responseData =  await response.json();
-
-      // console.log(responseData);
-
       const songData = [];
       
       for (const key in responseData) {
-        // console.log(responseData[key]);
         songData.push({
           id: key,
           songInfoName: responseData[key].songInfoName, // 노래이름

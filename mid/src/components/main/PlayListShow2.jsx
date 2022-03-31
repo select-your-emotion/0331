@@ -32,11 +32,11 @@ const PlayListShow2 = (props) => {
 {/* ~>~!~!?~!??~!!?~?   ... ?? . . . . >>??*/}
       <div className={classes.songName}>{props.playListName}</div>
       
-      <button onClick ={submitHandler}>Delete</button>
+      <button className="delete__button" onClick ={submitHandler}>Delete</button>
     </div>
     </>
 
-  )`
+  )
 }
 
 

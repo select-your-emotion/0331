@@ -3,18 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: 'SUIT-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 /* 전체 */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: black;
-  font-family: 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont,
+  background: #000000ec;
+  font-family: 'SUIT-Medium','Montserrat', -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 20px;
+  color : white;
   letter-spacing: 1px;
-  color: #778298;
   flex-direction: column;
 
 }
@@ -59,7 +64,7 @@ body {
 .loading {
   display: flex;
   justify-content: center;
-  font-weight: bold;
+
   letter-spacing: 1px;
   margin-top: 10%;
   font-size: 150%;
@@ -126,7 +131,6 @@ body {
   margin: 0.8rem;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  font-weight: bold;
   color: #778298;
 }
 
@@ -173,24 +177,26 @@ body {
   }
 }
 
-
+.input__total{
+  display: flex;
+}
 
 /* 우리 css */
 /* 헤더부분 */
 .container {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  background-color: black;
+  /* border: 1px solid #000000ec; */
+  /* background: #000000ec; */
   color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .header-top {
   box-sizing: border-box;
-  border-color: black;
+  border-color: #000000ec;
   display: flex;
-  margin-left : 6rem;
-  color: white
+  /* margin-left : 3rem; */
+  color: white;
 }
 
 .header-side {
@@ -210,7 +216,6 @@ body {
   margin-top: 30px;
   margin-bottom: 10px;
   color: white;
-  font-weight: bold;
 }
 
 .searchTotal{
@@ -252,7 +257,6 @@ section {
 .print_line {
   display: grid;
   flex-direction:row;
-  font-weight: bold;
   color: white;
   text-align: center;
   margin: 15px;
@@ -266,7 +270,6 @@ section {
 .print_line_tracklist {
   display: grid;
   flex-direction:row;
-  font-weight: bold;
   color: white;
   text-align: center;
   margin: 15px;
@@ -276,10 +279,10 @@ section {
   align-items: stretch;
 	align-items: center;
 }
+
 .print_line_tracklist_add {
   display: grid;
   flex-direction:row;
-  font-weight: bold;
   color: white;
   text-align: center;
   margin: 15px;
@@ -289,10 +292,10 @@ section {
   align-items: stretch;
   align-items: center;
 }
+
 .print_line_artistlist{
   display: grid;
   flex-direction:row;
-  font-weight: bold;
   color: white;
   text-align: center;
   margin: 15px;
@@ -303,7 +306,6 @@ section {
 .print_line_playlist {
   display: grid;
   flex-direction:row;
-  font-weight: bold;
   color: white;
   text-align: center;
   margin: 15px;
@@ -315,7 +317,6 @@ section {
 .print_line_albumlist{
   display: grid;
   flex-direction:row;
-  font-weight: bold;
   color: white;
   text-align: center;
   margin: 15px;
@@ -326,7 +327,6 @@ section {
 .print_line_playlist{
   display: grid;
   flex-direction:row;
-  font-weight: bold;
   color: white;
   text-align: center;
   margin: 15px;
@@ -335,19 +335,19 @@ section {
   align-items: center;
 }
 .print_line_albumlist:hover{
-    background-color: grey;
+    background-color: rgba(72, 72, 72, 0.175);
 }
 .print_line_artistlist:hover {
-  background-color: grey;
+  background-color: rgba(72, 72, 72, 0.175);
 }
 .print_line_tracklist:hover {
-  background-color: grey;
+  background-color: rgba(72, 72, 72, 0.175);
 }
 .print_line_playlist:hover {
-  background-color: grey;
+  background-color: rgba(72, 72, 72, 0.175);
 }
 .print_line_tracklist_add:hover {
-  background-color: grey;
+  background-color: rgba(72, 72, 72, 0.175);
 }
 
 .song_name {
@@ -358,7 +358,7 @@ section {
   word-break: break-all;
   text-align: center;
   margin-left: 20px;
-  font-size: 15px;
+  font-size: 18px;
   white-space: normal;
   vertical-align: middle;
 }
@@ -401,7 +401,6 @@ section {
 /* 사이드바 CSS */
 .label {
   color: white;
-  font-weight: bold;
 }
 
 .wrap {
@@ -414,12 +413,11 @@ section {
 }
 
 .sidebar-container {
-  width: 9rem;
+  width: 10rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   position: fixed;
   flex : 0.3;
 }
@@ -429,6 +427,7 @@ section {
   height: 50px;
   border-radius: 20px;
   margin-top:20px;
+  margin-bottom: 100px;
 }
 
 a {
@@ -436,21 +435,22 @@ a {
 }
 
 .btn-body {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   border-radius: 20px;
-  color: #f8d9c0;
+  margin-bottom: 10px;
+  color: #F8D9C0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 5px auto;
+  margin: 20px ;
   transition: all 0.2s ease;
   background-color: rgba(244, 187, 146,0.0);
 }
 
 .btn-body.active{
-  background-color: rgba(244, 187, 146,1);
+  background-color: rgba(162, 155, 149, 0.359);
   color: #fff;
   transform: scale(1.05);
 }
@@ -460,7 +460,7 @@ a {
 }
 
 .btn-title {
-  margin: 4px auto;
+  margin: 10px ;
   font-weight: 600;
   font-size: 16px;
 }
@@ -567,6 +567,7 @@ a {
 
 
 .delete__button {
+  width : 100px;
   text-align: right;
   float: right;
   border-radius: 30%;
@@ -586,3 +587,68 @@ a {
     background-color: grey;
 }
 
+.create__button{
+  width : 100px;
+  text-align: right;
+  float: right;
+  border-radius: 30%;
+  border-radius: 10px;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.418);
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  text-align: center;
+  z-index: 99999;
+  padding: 5px;
+  font-size: 1rem;
+
+}
+
+.create__button:hover {
+  border: 1px solid white;
+  background-color: grey;
+}
+
+.input__total{
+  margin-bottom: 20px;
+}
+
+.add__button{
+  width : 80px;
+  text-align: right;
+  float: right;
+  border-radius: 30%;
+  border-radius: 10px;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.418);
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  text-align: center;
+  z-index: 99999;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.add__button:hover {
+  border: 1px solid white;
+  background-color: grey;
+}
+
+.playlist__delete__button{
+  width : 30px;
+  text-align: right;
+  float: right;
+  border-radius: 30%;
+  border-radius: 10px;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.418);
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  text-align: center;
+  z-index: 99999;
+  padding: 5px;
+  font-size: 1rem;
+  margin-left: 100px;
+}
+
+.playlist__delete__button:hover {
+  border: 1px solid white;
+  background-color: grey;
+}

@@ -5,7 +5,6 @@ import Header from './header/Header';
 const NotFoundPage = () => {
   return (
     <React.Fragment>
-      <Header />
       Page not found. Goto <Link to="/dashboard">Home Page</Link>
     </React.Fragment>
   );

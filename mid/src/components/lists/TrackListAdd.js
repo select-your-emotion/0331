@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 import music from '../images/music.jpeg';
+import Song from './Song'
+
 
 const TrackListAdd = ({ tracks }) => {
   return (
@@ -36,9 +38,7 @@ const TrackListAdd = ({ tracks }) => {
                   <div className="song_artist">
                   {item.artists.map((artist) => artist.name)}
                   </div>
-                  <button class="add_button" type="button">
-                    추가하기
-                  </button>
+                  <Song Albums={item} ></Song>
                 </div>
               </React.Fragment>
             );

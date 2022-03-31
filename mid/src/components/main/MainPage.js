@@ -1,12 +1,10 @@
-import React, { useEffect, useState }  from 'react'
+import React, { useEffect, useState, useRef }  from 'react'
 import PlayListShow2 from './PlayListShow2';
 import classes from "./MainPage.module.css"
-import SongList from './SongList';
-import Modalpage from './Modal';
+import Input from './Input'
 
 const BASE_URL = 'http://localhost:8090/api/v1/playlists';
-
-const BASE_URL2 = 'http://localhost:8090/api/v1/playlists/showsonglist';
+const BASE_URL2 = 'http://localhost:8090/api/v1/playlists/addplaylist';
 
 
 const MainPage = () => {
@@ -53,18 +51,48 @@ const MainPage = () => {
   )
   );
 
-  const [modal, setModal] = useState(false);
+  // const [modal, setModal] = useState(false);
 
-  const modalOnOff = () => {
-      setModal(!modal);
-  };
+  // const modalOnOff = () => {
+  //     setModal(!modal);
+  // };
+
+  const nameInputRef = useRef();
+  
+    // const [modal, setModal] = React.useState(true);
+
+    const [didSubmit, setDidSubmit] = useState(false);
+
+    const submitHandler = async (event) => {
+    
+      const enteredName = nameInputRef.current.value;
+
+        await fetch(BASE_URL2,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({
+              playListName : enteredName,
+            })
+          }
+        );
+        setDidSubmit(true);  
+    }
+  
 
 
 
   return (
     <>
-    <button className={classes.createbutton} onClick={modalOnOff}>create</button>
-        { modal && <Modalpage />}
+
+    <div className="input__total">
+
+      <Input ref={nameInputRef} label="Write playlist name" input={{ id: "name", type: "text" }}></Input>
+      <button className="create__button"  onClick={submitHandler}>create</button>
+    </div>
+       
 
     <div className={classes.playlists}>{PlayLists}</div>
 

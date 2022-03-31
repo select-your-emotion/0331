@@ -17,10 +17,6 @@ const MAIN_POSTER = [
 
 const MyPlayList = (props) => {
 
-
-  
-
-
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('albums');
   const { isValidSession, history } = props;
@@ -102,7 +98,7 @@ const MyPlayList = (props) => {
 
 
         </div>
-      </div>
+     </div>
       ) : (
         <Redirect
           to={{

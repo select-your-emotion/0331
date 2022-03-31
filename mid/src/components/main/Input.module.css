@@ -1,12 +1,16 @@
+
 .input {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
+    margin-left: 10rem;
+    width : 33%;
+
 }
 
 .input label {
     font-weight: bold;
-    margin-right: 1rem;
+    margin-right: 1.2rem;
 }
 
 .input input {
@@ -15,4 +19,5 @@
     border: 1px solid #ccc;
     font: inherit;
     padding-left: 0.5rem;
+    width : 50%;    
 }

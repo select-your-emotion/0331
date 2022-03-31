@@ -34,7 +34,6 @@ const Home = (props) => {
         <Redirect to="/dashboard" />
       ) : (
         <div className="login">
-          <Header />
           {sessionExpired && (
             <Alert variant="info">Session expired. Please login again.</Alert>
           )}
