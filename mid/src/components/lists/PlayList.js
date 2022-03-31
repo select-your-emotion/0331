@@ -21,7 +21,7 @@ const PlayList = ({ playlist }) => {
                     {!_.isEmpty(item.images) ? (
                       <Card.Img variant="top" src={item.images[0].url} alt="" />
                     ) : (
-                      <img src={music} alt="" />
+                      <img className="default_img" src={music} alt="" />
                     )}
                   </a>
                   <Card.Body>

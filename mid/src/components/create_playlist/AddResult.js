@@ -2,12 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 import { Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
-import AlbumsList from './AlbumsList';
-import ArtistsList from './ArtistsList';
-import PlayList from './PlayList';
-import TracksList from './TracksList';
+import TracksList from '../lists/TracksList';
 
-const SearchResult = (props) => {
+const AddResult = (props) => {
   const {
     isValidSession,
     loadMore,
@@ -33,7 +30,7 @@ const SearchResult = (props) => {
   return (
     <React.Fragment>
       <div className="search-buttons">
-        {!_.isEmpty(albums.items) && (
+        {/* {!_.isEmpty(albums.items) && (
           <button
             className={`${
               selectedCategory === 'albums' ? 'btn active' : 'btn'
@@ -62,7 +59,7 @@ const SearchResult = (props) => {
           >
             PlayLists
           </button>
-        )}
+        )} */}
         {!_.isEmpty(tracks.items) && (
           <button
             className={`${
@@ -74,7 +71,7 @@ const SearchResult = (props) => {
           </button>
         )}
       </div>
-      <div className={`${selectedCategory === 'albums' ? '' : 'hide'}`}>
+      {/* <div className={`${selectedCategory === 'albums' ? '' : 'hide'}`}>
         {albums && <AlbumsList albums={albums} />}
       </div>
       <div className={`${selectedCategory === 'artists' ? '' : 'hide'}`}>
@@ -82,7 +79,7 @@ const SearchResult = (props) => {
       </div>
       <div className={`${selectedCategory === 'playlist' ? '' : 'hide'}`}>
         {playlist && <PlayList playlist={playlist} />}
-      </div>
+      </div> */}
       <div className={`${selectedCategory === 'tracks' ? '' : 'hide'}`}>
         {tracks && <TracksList tracks={tracks} />}
       </div>
@@ -98,4 +95,4 @@ const SearchResult = (props) => {
   );
 };
 
-export default SearchResult;
+export default AddResult;

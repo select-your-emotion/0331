@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
 import _ from 'lodash';
 import music from '../images/music.jpeg';
 
@@ -25,7 +24,7 @@ const TracksList = ({ tracks }) => {
                         alt=""
                       />
                     ) : (
-                      <img src={music} alt="" />
+                      <img className="default_img" src={music} alt="" />
                     )}
                   </a>
                   <div className="song_name">

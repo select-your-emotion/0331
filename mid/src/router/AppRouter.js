@@ -2,11 +2,14 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import RedirectPage from '../components/RedirectPage';
-import Dashboard from '../components/Dashboard';
+import Dashboard from '../components/search/Dashboard';
 import NotFoundPage from '../components/NotFoundPage';
 import '../App.css';
-import SpotifyWebApi from "spotify-web-api-js";
-
+import Header from '../components/header/Header';
+import Sidebar from '../components/sidebar/Sidebar';
+import AddSongToPlaylist from '../components/create_playlist/AddSongToPlaylist';
+import Player from '../components/player/player';
+import Library from '../components/Library';
 
 class AppRouter extends React.Component {
   state = {
@@ -38,6 +41,9 @@ class AppRouter extends React.Component {
   render() {
     return (
       <BrowserRouter>
+      {/* <div className="wrap"> */}
+      <Header />
+      <Sidebar />
         <div className="main">
           <Switch>
             <Route
@@ -51,21 +57,31 @@ class AppRouter extends React.Component {
               path="/redirect"
               render={(props) => (
                 <RedirectPage
-                  isValidSession={this.isValidSession}
-                  setExpiryTime={this.setExpiryTime}
-                  {...props}
+                isValidSession={this.isValidSession}
+                setExpiryTime={this.setExpiryTime}
+                {...props}
                 />
-              )}
-            />
+                )}
+                />
             <Route
               path="/dashboard"
               render={(props) => (
-                <Dashboard isValidSession={this.isValidSession} {...props} />
-              )}
-            />
+                <Dashboard isValidSession={this.isValidSession} {...props} />)}/>
+            <Route path="/dashboard" component={Dashboard} />
+
+            <Route
+              path="/addsongtoplaylist"
+              render={(props) => (
+                <AddSongToPlaylist isValidSession={this.isValidSession} {...props} />)}/>
+            <Route path="/addsongtoplaylist" component={AddSongToPlaylist} />
+
+
+            <Route path="/player" component={Player} />
+            <Route path="/library" component={Library} />
             <Route component={NotFoundPage} />
           </Switch>
         </div>
+        {/* </div> */}
       </BrowserRouter>
     );
   }

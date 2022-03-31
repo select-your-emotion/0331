@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
 import {
   initiateGetResult,
   initiateLoadMoreAlbums, initiateLoadMoreArtists, initiateLoadMorePlaylist, initiateLoadMoreTracks
-} from '../actions/result';
-import Header from './Header';
-import Loader from './Loader';
-import SearchForm from './SearchForm';
-import SearchResult from './SearchResult';
-import Sidebar from './Sidebar';
+} from '../result';
+import Loader from '../Loader';
+import AddForm from './AddForm';
+import AddResult from './AddResult';
 
-const Dashboard = (props) => {
+
+
+const AddSongToPlaylist = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('albums');
   const { isValidSession, history } = props;
-
+ 
   const handleSearch = (searchTerm) => {
     if (isValidSession()) {
       setIsLoading(true);
       props.dispatch(initiateGetResult(searchTerm)).then(() => {
         setIsLoading(false);
-        setSelectedCategory('albums');
+        setSelectedCategory('tracks');
       });
     } else {
       history.push({
@@ -74,14 +74,10 @@ const Dashboard = (props) => {
     <React.Fragment>
       {isValidSession() ? (
         <div>
-     <Header />
-          <div className="wrap">
-            <Sidebar />
-          </div>
           <div className="wrap2">
-          <SearchForm handleSearch={handleSearch} />
+          <AddForm handleSearch={handleSearch} />
           <Loader show={isLoading}>Loading...</Loader>
-          <SearchResult
+          <AddResult
             result={result}
             loadMore={loadMore}
             setCategory={setCategory}
@@ -113,4 +109,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(AddSongToPlaylist);
