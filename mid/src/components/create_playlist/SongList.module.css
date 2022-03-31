@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'MinSans-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.songTotal{
+  font-family: 'MinSans-Medium';
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px black solid;
+}
+
+
+.songimage{
+  width : 2rem;
+  margin-left: 20px;
+}
+
+.songName{
+  margin-left: 20px;
+  font-size: 1.2rem;
+  width : 50%;
+  text-align: left;
+}
+
+.songSinger{
+  margin-left: 20px;
+  font-size: 1rem;
+  width : 30%;
+  text-align: left;
+
+}

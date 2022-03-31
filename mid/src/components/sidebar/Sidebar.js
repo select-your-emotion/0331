@@ -20,10 +20,10 @@ export default function Sidebar(props) {
     <div className="sidebar-container">
         <img src={image} className="profile-img" alt="profile" />
         <div>
-        <SidebarButton title="Create Playlist" to="/addsongtoplaylist" icon={<MdSpaceDashboard />} />
+        <SidebarButton title="MainPage" to="/main" icon={<IoLibrary />} />
+        <SidebarButton title="Playlist" to="/myPlayList" icon={<MdSpaceDashboard />} />
         <SidebarButton title="Search" to="/dashboard" icon={<FaGripfire />} />
         <SidebarButton title="Player" to="/player" icon={<FaPlay />} />
-        <SidebarButton title="My Playlists" to="/library" icon={<IoLibrary />} />
         </div>
         <SidebarButton title="Sign Out" to="" icon={<FaSignOutAlt />} />
     </div>

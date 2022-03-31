@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
-import TracksList from '../lists/TracksList';
+import TrackListAdd from '../lists/TrackListAdd';
 
 const AddResult = (props) => {
   const {
@@ -12,7 +12,7 @@ const AddResult = (props) => {
     setCategory,
     selectedCategory
   } = props;
-  console.log(result);
+  // console.log(result);
   const { albums, artists, playlist, tracks } = result;
   if (!isValidSession()) {
     return (
@@ -81,7 +81,7 @@ const AddResult = (props) => {
         {playlist && <PlayList playlist={playlist} />}
       </div> */}
       <div className={`${selectedCategory === 'tracks' ? '' : 'hide'}`}>
-        {tracks && <TracksList tracks={tracks} />}
+        {tracks && <TrackListAdd tracks={tracks} />}
       </div>
       {!_.isEmpty(result[selectedCategory]) &&
         !_.isEmpty(result[selectedCategory].next) && (

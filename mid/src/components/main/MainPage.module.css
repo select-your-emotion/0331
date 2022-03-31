@@ -1,0 +1,13 @@
+.playlists {
+  margin-left : 7rem;
+  display : flex;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.total{
+  margin-left: 7rem;
+}

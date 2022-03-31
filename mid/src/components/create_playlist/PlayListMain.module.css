@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'MinSans-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mainimage{
+  max-width : 40vh;
+}
+
+.main {
+  height : 50vh;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  align-items :flex-end;
+  display: flex;
+  font-family: 'MinSans-Medium';
+  background: linear-gradient(to top, rgb(114, 112, 112), rgb(117, 147, 245));
+  /* width : 100vh; */
+  margin-left: 7rem;
+}
+
+.myplaylist{
+  margin-left: 50px;
+  font-size: 50px;
+  color: white;
+
+
+}
+

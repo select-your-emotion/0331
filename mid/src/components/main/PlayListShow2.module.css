@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'MinSans-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.songTotal{
+  font-family: 'MinSans-Medium';
+  width : 20%;
+  text-align : center;
+}
+
+.thumbnail{
+  width : 100px;
+  height : 100px;
+  min-width : 20px;
+  
+  
+}

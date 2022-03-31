@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'MinSans-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.total{
+  margin-left: 7rem;
+  font-family: 'MinSans-Medium';
+
+}
+
+.info{
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.songList{
+  color : white;
+  background : rgba(219, 210, 210, 0.137);
+}
+
+.albumname{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.singer{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+

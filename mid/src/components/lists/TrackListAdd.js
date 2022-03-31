@@ -1,26 +1,28 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
 import _ from 'lodash';
 import music from '../images/music.jpeg';
 
-const PlayList = ({ playlist }) => {
+const TrackListAdd = ({ tracks }) => {
   return (
-    <div>
-      {Object.keys(playlist).length > 0 && (
-        <div >
-          {playlist.items.map((item, index) => {
+    <React.Fragment>
+      {Object.keys(tracks).length > 0 && (
+        <div>
+          {tracks.items.map((item, index) => {
             return (
               <React.Fragment key={index}>
-                <div className='print_line_playlist'>
+                <div className="print_line_tracklist_add">
                   <a
                     target="_blank"
                     href={item.external_urls.spotify}
                     rel="noopener noreferrer"
                     className="card-image-link"
                   >
-                    {!_.isEmpty(item.images) ? (
+                    {!_.isEmpty(item.album.images) ? (
                       <img className="album_images"
-                      variant="top" src={item.images[0].url} alt="" />
+                        variant="top"
+                        src={item.album.images[0].url}
+                        alt=""
+                      />
                     ) : (
                       <img className="default_img" src={music} alt="" />
                     )}
@@ -29,19 +31,22 @@ const PlayList = ({ playlist }) => {
                   {item.name}
                   </div>
                   <div className="album_name">
-                  By {item.owner.display_name}
+                    {item.album.name}
                   </div>
                   <div className="song_artist">
-                    {item.tracks.total}개
+                  {item.artists.map((artist) => artist.name)}
                   </div>
+                  <button class="add_button" type="button">
+                    추가하기
+                  </button>
                 </div>
               </React.Fragment>
             );
           })}
         </div>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 
-export default PlayList;
+export default TrackListAdd;

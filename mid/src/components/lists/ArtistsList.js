@@ -7,11 +7,11 @@ const ArtistsList = ({ artists }) => {
   return (
     <React.Fragment>
       {Object.keys(artists).length > 0 && (
-        <div className="artists">
+        <div>
           {artists.items.map((artist, index) => {
             return (
               <React.Fragment key={index}>
-                <Card style={{ width: '18rem' }}>
+                <div className="print_line_artistlist">
                   <a
                     target="_blank"
                     href={artist.external_urls.spotify}
@@ -19,7 +19,7 @@ const ArtistsList = ({ artists }) => {
                     className="card-image-link"
                   >
                     {!_.isEmpty(artist.images) ? (
-                      <Card.Img
+                      <img className="album_images"
                         variant="top"
                         src={artist.images[0].url}
                         alt=""
@@ -28,11 +28,14 @@ const ArtistsList = ({ artists }) => {
                       <img className="default_img" src={music} alt="" />
                     )}
                   </a>
-                  <Card.Body>
-                    <Card.Title>{artist.name}</Card.Title>
-                  </Card.Body>
-                </Card>
-              </React.Fragment>
+                  <div className="song_name">
+                    {artist.name}
+                  </div>
+                  <div className="song_artist">
+                    {artist.followers.total}명
+                  </div>
+               </div>
+            </React.Fragment>
             );
           })}
         </div>

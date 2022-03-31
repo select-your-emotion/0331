@@ -7,9 +7,9 @@ import NotFoundPage from '../components/NotFoundPage';
 import '../App.css';
 import Header from '../components/header/Header';
 import Sidebar from '../components/sidebar/Sidebar';
-import AddSongToPlaylist from '../components/create_playlist/AddSongToPlaylist';
 import Player from '../components/player/player';
-import Library from '../components/Library';
+import MainPage from '../components/main/MainPage';
+import MyPlayList from '../components/create_playlist/MyPlayList';
 
 class AppRouter extends React.Component {
   state = {
@@ -70,14 +70,16 @@ class AppRouter extends React.Component {
             <Route path="/dashboard" component={Dashboard} />
 
             <Route
-              path="/addsongtoplaylist"
+              path="/myPlayList"
               render={(props) => (
-                <AddSongToPlaylist isValidSession={this.isValidSession} {...props} />)}/>
-            <Route path="/addsongtoplaylist" component={AddSongToPlaylist} />
+                <MyPlayList isValidSession={this.isValidSession} {...props} />)}/>
 
+            <Route path="/myPlayList" component={MyPlayList} />
+
+            <Route path="/main" component={MainPage} />
 
             <Route path="/player" component={Player} />
-            <Route path="/library" component={Library} />
+            
             <Route component={NotFoundPage} />
           </Switch>
         </div>

@@ -23,11 +23,15 @@ const SearchForm = (props) => {
 
   return (
     <div>
-      <Form onSubmit={handleSearch}>
+<Form onSubmit={handleSearch}>
         {errorMsg && <p className="errorMsg">{errorMsg}</p>}
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label className="label">찾고자 하는 노래를 검색해보세요</Form.Label>
+          
+          <Form.Label className="label1"> 듣고싶은 노래를 검색하세요</Form.Label>
+          
+          <div className="searchTotal">
+
           <Form.Control
+            className ="searchFor"
             type="search"
             name="searchTerm"
             value={searchTerm}
@@ -35,10 +39,12 @@ const SearchForm = (props) => {
             onChange={handleInputChange}
             autoComplete="off"
           />
-        </Form.Group>
-        <Button variant="info" type="submit">
+
+        <Button className = "searchButton" variant="info" type="submit">
           Search
         </Button>
+            </div>
+
       </Form>
     </div>
   );

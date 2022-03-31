@@ -36,9 +36,6 @@ const TracksList = ({ tracks }) => {
                   <div className="song_artist">
                   {item.artists.map((artist) => artist.name)}
                   </div>
-                  <button class="add_button" type="button">
-                    추가하기
-                  </button>
                 </div>
               </React.Fragment>
             );

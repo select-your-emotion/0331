@@ -8,10 +8,19 @@ import {
 import Loader from '../Loader';
 import AddForm from './AddForm';
 import AddResult from './AddResult';
+import PlayListMain from './PlayListMain';
+import PlayListBody from './PlayListBody';
+
+const MAIN_POSTER = [
+  {image : "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/00f56557183915.59cbcc586d5b8.jpg"}
+]
+
+const MyPlayList = (props) => {
 
 
+  
 
-const AddSongToPlaylist = (props) => {
+
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('albums');
   const { isValidSession, history } = props;
@@ -71,12 +80,18 @@ const AddSongToPlaylist = (props) => {
   const result = { albums, artists, playlist, tracks };
 
   return (
-    <React.Fragment>
+    <>
       {isValidSession() ? (
         <div>
+
+
+          <PlayListMain src={MAIN_POSTER[0].image}/>
+          <PlayListBody/>
+
           <div className="wrap2">
           <AddForm handleSearch={handleSearch} />
           <Loader show={isLoading}>Loading...</Loader>
+
           <AddResult
             result={result}
             loadMore={loadMore}
@@ -84,6 +99,8 @@ const AddSongToPlaylist = (props) => {
             selectedCategory={selectedCategory}
             isValidSession={isValidSession}
             />
+
+
         </div>
       </div>
       ) : (
@@ -96,7 +113,7 @@ const AddSongToPlaylist = (props) => {
           }}
         />
       )}
-    </React.Fragment>
+    </>
   );
 };
 
@@ -109,4 +126,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(AddSongToPlaylist);
+export default connect(mapStateToProps)(MyPlayList);

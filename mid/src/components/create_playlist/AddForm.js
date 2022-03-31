@@ -25,9 +25,13 @@ const AddForm = (props) => {
     <div>
       <Form onSubmit={handleSearch}>
         {errorMsg && <p className="errorMsg">{errorMsg}</p>}
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label className="label">플레이리스트에 추가할 노래를 검색하세요</Form.Label>
+          
+          <Form.Label className="label1">플레이리스트에 추가할 노래를 검색하세요</Form.Label>
+          
+          <div className="searchTotal">
+
           <Form.Control
+            className ="searchFor"
             type="search"
             name="searchTerm"
             value={searchTerm}
@@ -35,10 +39,12 @@ const AddForm = (props) => {
             onChange={handleInputChange}
             autoComplete="off"
           />
-        </Form.Group>
-        <Button variant="info" type="submit">
+
+        <Button className = "searchButton" variant="info" type="submit">
           Search
         </Button>
+            </div>
+
       </Form>
     </div>
   );
