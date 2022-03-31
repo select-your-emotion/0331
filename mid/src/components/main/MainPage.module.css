@@ -1,6 +1,7 @@
 .playlists {
   margin-left : 7rem;
   display : flex;
+  flex-wrap: wrap;  
 }
 
 .info {
@@ -9,5 +10,9 @@
 }
 
 .total{
+  margin-left: 7rem;
+}
+
+.createbutton{
   margin-left: 7rem;
 }

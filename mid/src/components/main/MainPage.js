@@ -63,9 +63,9 @@ const MainPage = () => {
 
   return (
     <>
-    <button onClick={modalOnOff}>create</button>
+    <button className={classes.createbutton} onClick={modalOnOff}>create</button>
         { modal && <Modalpage />}
-        
+
     <div className={classes.playlists}>{PlayLists}</div>
 
     
