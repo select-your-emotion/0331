@@ -218,6 +218,10 @@ section {
   max-width: 90px;
   max-height: 900px;
 }
+.default_img {
+  max-width: 90px;
+  max-height: 900px;
+}
 
 .artist_images {
   max-width:  1000px;

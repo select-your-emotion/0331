@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import APIKit from "../spotify"
+import APIKit from "../spotify";
 import { IconContext } from "react-icons";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 
-export default function Library() {
+export default function Library(props) {
   const [playlists, setPlaylists] = useState(null);
 
   useEffect(() => {
-    // 수정
-    APIKit.get("me/playlists").then(function (response) { 
+    APIKit.get("me/playlists").then(function (response) {
       setPlaylists(response.data.items);
       console.log(response.data.items);
     });
   }, []);
-// 수정
+
   const history = useHistory();
 
   const playPlaylist = (id) => {
