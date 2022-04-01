@@ -78,12 +78,10 @@ class AppRouter extends React.Component {
 
             <Route path="/main" component={MainPage} />
 
-            <Route path="/player" component={Player} />
             
             <Route component={NotFoundPage} />
           </Switch>
         </div>
-        {/* </div> */}
       </BrowserRouter>
     );
   }

@@ -31,7 +31,7 @@ const Home = (props) => {
   return (
     <React.Fragment>
       {isValidSession() ? (
-        <Redirect to="/dashboard" />
+        <Redirect to="/main" />
       ) : (
         <div className="login">
           {sessionExpired && (

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import classes from './PlayListShow2.module.css';
+import Modal from './Modal'
 
 const BASE_URL = 'http://localhost:8090/api/v1/playlists';
 
@@ -22,16 +23,21 @@ const PlayListShow2 = (props) => {
       );
       setDidSubmit(true);  
   }
+  const [modal, setModal] = React.useState(false);
+
+  const modalOnOff = () => {
+      setModal(!modal);
+  };
+
 
   return (
     <>
 
     <div className={classes.songTotal}>
       <img className={classes.thumbnail} src={props.playListThumbnail} alt="" />
+      <div onClick={modalOnOff} className={classes.songName}>{props.playListName}</div>
+      {modal && <Modal info={props} />}
 
-{/* ~>~!~!?~!??~!!?~?   ... ?? . . . . >>??*/}
-      <div className={classes.songName}>{props.playListName}</div>
-      
       <button className="delete__button" onClick ={submitHandler}>Delete</button>
     </div>
     </>

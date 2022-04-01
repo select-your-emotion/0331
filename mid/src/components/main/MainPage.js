@@ -16,11 +16,7 @@ const MainPage = () => {
 
     const fetchBooks = async () => {
       const response = await fetch(BASE_URL)
-
       const responseData =  await response.json();
-
-      ///console.log(responseData);
-
       const songData = [];
       
       for (const key in responseData) {
@@ -95,17 +91,6 @@ const MainPage = () => {
        
 
     <div className={classes.playlists}>{PlayLists}</div>
-
-    
-    {/* <div className={classes.total}>
-
-      <div className={classes.info}>
-        < div className={classes.albumname}>앨범 이름 </div>
-        <div className={classes.singer}>가수</div>
-      </div>
-
-      <div className={classes.songList}>{songList}</div>
-    </div> */}
   </>
     )
 }
