@@ -19,16 +19,12 @@ const Modalpage = (props) => {
     
       const enteredName = nameInputRef.current.value;
 
-        await fetch(BASE_URL,
+        await fetch(`${BASE_URL}?currentName=${props.info.playListName}&toChangeName=${enteredName}`,
           {
             method: 'PUT',
             headers: {
               'Content-Type' : 'application/json',
-            },
-            body: JSON.stringify({
-              currentName : props.info.playListName,
-              toChangeName : enteredName,
-            })
+            }
           }
         );
         setDidSubmit(true);  
@@ -43,26 +39,40 @@ const Modalpage = (props) => {
     const modalOff = () => {
         setModal(false);
     };
+    
+    const bg = {
+      overlay: {
+        background: "#FFFF00"
+      }
+    };
 
   return (
-    <>
-     <Modal
+    <Modal 
         className={classes.modaldesign}
         isOpen={modal}
         ariaHideApp={false}
         onRequestClose={modalOff}
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.3)'
+        }}}
       >
-          <form >
-            <img 
-            className={classes.thumbnail}
-            src={props.info.playListThumbnail}/>
-            <h2>Enter New Playlist Name</h2>
+    <div className={classes.modalTotal}>
+      <img 
+      className={classes.thumbnail}
+      src={props.info.playListThumbnail}/>
+        <div className={classes.modalinfo}>
+              
+          <h2>Enter New Playlist Name</h2>
+          <div className={classes.modaltext}>
             <Input2 ref={nameInputRef} label="New name :" input={{ id: "name", type: "text" }}></Input2>
-            <button onClick ={submitHandler} type="submit" >update</button>
-          </form>
+            <button className={classes.modalbutton} onClick ={submitHandler} type="submit" >Click</button>
+          </div>
+        </div>
+
+    </div>
 
       </Modal>
-    </>
   )
 }
 

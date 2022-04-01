@@ -2,8 +2,8 @@
 .input {
     display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
-    width : 33%;
+    /* margin-bottom: 0.5rem; */
+    width : 90%;
 
 }
 
@@ -16,6 +16,6 @@
     border-radius: 3px;
     border: 1px solid #ccc;
     font: inherit;
-    /* padding-left: 0.5rem; */
-    width : 50%;    
+    padding-left: 0.5rem;
+    width : 60%;    
 }

@@ -86,7 +86,8 @@ const MainPage = () => {
     <div className="input__total">
 
       <Input ref={nameInputRef} label="Write playlist name" input={{ id: "name", type: "text" }}></Input>
-      <button className="create__button"  onClick={submitHandler}>create</button>
+      <button className="create__button"  onClick={submitHandler}
+      >create</button>
     </div>
        
 

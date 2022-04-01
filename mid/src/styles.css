@@ -597,7 +597,7 @@ a {
   color: rgba(255, 255, 255, 0.418);
   border: 1px solid rgba(255, 255, 255, 0.418);
   text-align: center;
-  z-index: 99999;
+  z-index:0;
   padding: 5px;
   font-size: 1rem;
 
@@ -651,4 +651,8 @@ a {
 .playlist__delete__button:hover {
   border: 1px solid white;
   background-color: grey;
+}
+
+.ReactModal__Overlay ReactModal__Overlay--after--open{
+  background: black;
 }

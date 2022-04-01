@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Input.module2.css';
+import classes from './Input2.module.css';
 
 // forwareRef 적용 전.
 // const Input = (props) => {
