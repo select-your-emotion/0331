@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SidebarButton from './SidebarButton'
-import { MdFavorite } from "react-icons/md";
-import { FaGripfire, FaPlay } from "react-icons/fa";
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaGripfire} from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
 import { MdSpaceDashboard } from "react-icons/md";
 import apiClient from '../../spotify';

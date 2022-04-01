@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useRef} from 'react'
 import Modal from 'react-modal'
 import Input2 from './Input2'
 import classes from './Modal.module.css'
@@ -13,7 +13,6 @@ const Modalpage = (props) => {
   const nameInputRef = useRef();
   
     const [modal, setModal] = React.useState(true);
-    const [didSubmit, setDidSubmit] = useState(false);
 
     const submitHandler = async (event) => {
     
@@ -27,8 +26,7 @@ const Modalpage = (props) => {
             }
           }
         );
-        setDidSubmit(true);  
-
+        
         submitHandler().catch(error => {
           console.log(error);
         })
@@ -40,12 +38,6 @@ const Modalpage = (props) => {
         setModal(false);
     };
     
-    const bg = {
-      overlay: {
-        background: "#FFFF00"
-      }
-    };
-
   return (
     <Modal 
         className={classes.modaldesign}
@@ -60,7 +52,8 @@ const Modalpage = (props) => {
     <div className={classes.modalTotal}>
       <img 
       className={classes.thumbnail}
-      src={props.info.playListThumbnail}/>
+      src={props.info.playListThumbnail}
+      alt=""/>
         <div className={classes.modalinfo}>
               
           <h2>Enter New Playlist Name</h2>

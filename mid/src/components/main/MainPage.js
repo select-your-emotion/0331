@@ -10,9 +10,7 @@ const BASE_URL2 = 'http://localhost:8090/api/v1/playlists/addplaylist';
 const MainPage = () => {
   const [playlists, setPlayLists] = useState([]);
 
-  // PlayList Picture 출력
   useEffect(() => {
-    console.log('호출');
 
     const fetchBooks = async () => {
       const response = await fetch(BASE_URL)
@@ -47,19 +45,9 @@ const MainPage = () => {
   )
   );
 
-  // const [modal, setModal] = useState(false);
-
-  // const modalOnOff = () => {
-  //     setModal(!modal);
-  // };
-
   const nameInputRef = useRef();
-  
-    // const [modal, setModal] = React.useState(true);
 
-    const [didSubmit, setDidSubmit] = useState(false);
-
-    const submitHandler = async (event) => {
+  const submitHandler = async (event) => {
     
       const enteredName = nameInputRef.current.value;
 
@@ -74,7 +62,6 @@ const MainPage = () => {
             })
           }
         );
-        setDidSubmit(true);  
     }
   
 
@@ -82,15 +69,12 @@ const MainPage = () => {
 
   return (
     <>
-
     <div className="input__total">
 
       <Input ref={nameInputRef} label="Write playlist name" input={{ id: "name", type: "text" }}></Input>
       <button className="create__button"  onClick={submitHandler}
       >create</button>
     </div>
-       
-
     <div className={classes.playlists}>{PlayLists}</div>
   </>
     )

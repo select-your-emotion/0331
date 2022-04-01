@@ -12,8 +12,9 @@ const AddResult = (props) => {
     setCategory,
     selectedCategory
   } = props;
-  // console.log(result);
-  const { albums, artists, playlist, tracks } = result;
+
+  const { tracks } = result;
+
   if (!isValidSession()) {
     return (
       <Redirect
@@ -30,36 +31,7 @@ const AddResult = (props) => {
   return (
     <React.Fragment>
       <div className="search-buttons">
-        {/* {!_.isEmpty(albums.items) && (
-          <button
-            className={`${
-              selectedCategory === 'albums' ? 'btn active' : 'btn'
-            }`}
-            onClick={() => setCategory('albums')}
-          >
-            Albums
-          </button>
-        )}
-        {!_.isEmpty(artists.items) && (
-          <button
-            className={`${
-              selectedCategory === 'artists' ? 'btn active' : 'btn'
-            }`}
-            onClick={() => setCategory('artists')}
-          >
-            Artists
-          </button>
-        )}
-        {!_.isEmpty(playlist.items) && (
-          <button
-            className={`${
-              selectedCategory === 'playlist' ? 'btn active' : 'btn'
-            }`}
-            onClick={() => setCategory('playlist')}
-          >
-            PlayLists
-          </button>
-        )} */}
+      
         {!_.isEmpty(tracks.items) && (
           <button
             className={`${
@@ -71,15 +43,6 @@ const AddResult = (props) => {
           </button>
         )}
       </div>
-      {/* <div className={`${selectedCategory === 'albums' ? '' : 'hide'}`}>
-        {albums && <AlbumsList albums={albums} />}
-      </div>
-      <div className={`${selectedCategory === 'artists' ? '' : 'hide'}`}>
-        {artists && <ArtistsList artists={artists} />}
-      </div>
-      <div className={`${selectedCategory === 'playlist' ? '' : 'hide'}`}>
-        {playlist && <PlayList playlist={playlist} />}
-      </div> */}
       <div className={`${selectedCategory === 'tracks' ? '' : 'hide'}`}>
         {tracks && <TrackListAdd tracks={tracks} />}
       </div>

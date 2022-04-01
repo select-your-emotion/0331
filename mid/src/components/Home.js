@@ -2,7 +2,6 @@ import React from 'react';
 import { Alert } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
-import Header from './header/Header';
 import { Redirect } from 'react-router-dom';
 
 const Home = (props) => {

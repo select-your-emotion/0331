@@ -17,7 +17,6 @@
   display: flex;
   font-family: 'MinSans-Medium';
   background: linear-gradient(to top, rgb(114, 112, 112), rgb(117, 147, 245));
-  /* width : 100vh; */
   margin-left: 7rem;
 }
 

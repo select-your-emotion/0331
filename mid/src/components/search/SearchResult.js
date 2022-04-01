@@ -16,8 +16,6 @@ const SearchResult = (props) => {
     selectedCategory
   } = props;
   
-  // console.log(result);
-
   const { albums, artists, playlist, tracks } = result;
   if (!isValidSession()) {
     return (

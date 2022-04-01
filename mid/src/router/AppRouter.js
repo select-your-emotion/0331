@@ -7,7 +7,6 @@ import NotFoundPage from '../components/NotFoundPage';
 import '../App.css';
 import Header from '../components/header/Header';
 import Sidebar from '../components/sidebar/Sidebar';
-import Player from '../components/player/player';
 import MainPage from '../components/main/MainPage';
 import MyPlayList from '../components/create_playlist/MyPlayList';
 
@@ -41,7 +40,6 @@ class AppRouter extends React.Component {
   render() {
     return (
       <BrowserRouter>
-      {/* <div className="wrap"> */}
       <Header />
       <Sidebar />
         <div className="main">

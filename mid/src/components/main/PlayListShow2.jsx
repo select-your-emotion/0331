@@ -1,12 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import classes from './PlayListShow2.module.css';
 import Modal from './Modal'
 
 const BASE_URL = 'http://localhost:8090/api/v1/playlists';
 
 const PlayListShow2 = (props) => {
-
-  const [didSubmit, setDidSubmit] = useState(false);
 
   const submitHandler = async (event) => {
   
@@ -21,7 +19,6 @@ const PlayListShow2 = (props) => {
           })
         }
       );
-      setDidSubmit(true);  
   }
   const [modal, setModal] = React.useState(false);
 

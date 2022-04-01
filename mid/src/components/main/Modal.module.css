@@ -30,9 +30,6 @@
     border: 1px solid rgba(15, 15, 15, 0.888);
     background: rgba(15, 15, 15, 0.888);
     overflow: auto;
-    
-    /* WebkitOverflowScrolling: touch; */
-    /* borderRadius: 4px;*/
     outline: none;
     padding: 20px;
 }

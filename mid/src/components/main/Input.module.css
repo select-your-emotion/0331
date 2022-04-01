@@ -1,11 +1,9 @@
-
 .input {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
     margin-left: 10rem;
     width : 33%;
-
 }
 
 .input label {

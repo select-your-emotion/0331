@@ -1,32 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import classes from './SongList.module.css';
 
-// DELETE SONG~~~~~~~~~~~~~~~~~~~~~~ DELETE SONG DELETE SONG DELETE SONG DELETE SONG
 const SongList = (props) => {
 
-  // console.log(props.playListName);
-  // console.log(props.songInfoName);
-  const [didSubmit, setDidSubmit] = useState(false);
-
-  
-
-  // const removeSong = () => {
-  //   const selectedSong = cartState.items.findIndex(
-  //     (item) => item.id === id
-  //   );
-  //   console.log(selectedCartItemIndex);
-
-  //   const selectedCartItem = cartState.items[selectedCartItemIndex];
-  
-  //   const updatedTotalAmount = cartState.totalAmount - selectedCartItem.amount * selectedCartItem.price;
-  //   // console.log(updatedTotalAmount);
-
-  //   // 배열에서 해당 객체만 제거 후 다시 업데이트
-  //   const updatedItems = cartState.items.filter(item => item.id !== id);
-
-  //   setCartState({items: updatedItems, totalAmount: updatedTotalAmount});
-  // };
-  
   const BASE_URL = 'http://localhost:8090/api/v1/songinfo';
 
   const submitHandler = async (event) => {
@@ -42,7 +18,6 @@ const SongList = (props) => {
           })
         }
       );
-      setDidSubmit(true);  
   }
 
   return (

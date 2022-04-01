@@ -184,8 +184,6 @@ body {
 /* 우리 css */
 /* 헤더부분 */
 .container {
-  /* border: 1px solid #000000ec; */
-  /* background: #000000ec; */
   color: white;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -195,7 +193,6 @@ body {
   box-sizing: border-box;
   border-color: #000000ec;
   display: flex;
-  /* margin-left : 3rem; */
   color: white;
 }
 

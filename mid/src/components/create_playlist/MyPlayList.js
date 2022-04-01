@@ -95,8 +95,6 @@ const MyPlayList = (props) => {
             selectedCategory={selectedCategory}
             isValidSession={isValidSession}
             />
-
-
         </div>
      </div>
       ) : (
